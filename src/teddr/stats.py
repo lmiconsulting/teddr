@@ -254,3 +254,47 @@ def mmd(s1, s2, unbiased=False):
             np.sum(KXX) / (m**2) + np.sum(KYY) / (n**2) - 2 * np.sum(KXY) / (m * n)
         ) ** 0.5
         return MMD_b
+
+def pct_less(vals, ref):
+    """Calculate the percentage of values in a list that are less than a reference value.
+
+    Parameters
+    ----------
+    vals : list or array-like
+        A list or array containing numeric values to compare against the reference.
+    ref : float or int
+        The reference value against which the values in `vals` are compared.
+
+    Examples
+    --------
+    >>> pct_less([1, 2, 3, 4, 5], 3)
+    0.4
+    """
+    return sum(v < ref for v in vals) / len(vals)
+
+def holm_bonferroni(p_values, alpha=0.05):
+    """Apply the Holm-Bonferroni method to adjust p-values for multiple comparisons.
+
+    Parameters
+    ----------
+    p_values : list or array-like
+        A list of p-values to adjust.
+    alpha : float, optional
+        The significance level to use, by default 0.05.
+
+    Examples
+    --------
+    >>> holm_bonferroni([0.01, 0.04, 0.03, 0.05])
+    2
+    """
+    sorted_p_values = sorted((p, i) for i, p in enumerate(p_values))
+    m = len(p_values)
+    adjusted_alpha = [alpha / (m - i) for i in range(m)]
+    significant = [False] * m
+    
+    for (p_value, original_index), alpha in zip(sorted_p_values, adjusted_alpha):
+        if p_value <= alpha:
+            significant[original_index] = True
+        else:
+            break
+    return significant.count(True)

@@ -137,7 +137,7 @@ class GridWorld:
         return grid
 
     def generate_events(
-        self, n_events, destination_prob_method="uniform", return_distances=False
+        self, n_events, destination_prob_method="inverse_distance", return_distances=False
     ):
         """Generate events representing trips between locations.
 
