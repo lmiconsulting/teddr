@@ -20,5 +20,19 @@ Install requirements:
 pip install -r requirements.txt
 ```
 
+## Citing
+
+If you found our work helpful, please consider citing it with:
+
+```bibtex
+@article{mccabe2023nonparametric,
+  title={Nonparametric Estimation and Comparison of Distance Distributions from Censored Data},
+  author={McCabe, Lucas H},
+  journal={arXiv preprint arXiv:2311.02658},
+  year={2023}
+}
+```
+
+
 ## License
 [MIT](https://choosealicense.com/licenses/mit/)
