@@ -1,6 +1,5 @@
 import numpy as np
 import statsmodels.api as sm
-import cvxpy as cp
 
 
 def gaussian_kernel(x, y, sigma):

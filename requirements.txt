@@ -1,10 +1,7 @@
-lomain @ git+https://github.com/lmiconsulting/lomain.git
-cvxpy==1.4.1
 lifelines==0.27.8
 matplotlib==3.7.1
 networkx==3.2
 numpy==1.25.0
-scipy==1.11.3
+scipy==1.11.4
+setuptools==68.0.0
 statsmodels==0.14.0
-smplotlib==0.0.9
-seaborn==0.13.0

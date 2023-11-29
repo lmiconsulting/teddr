@@ -13,6 +13,14 @@
 
 
 ## Installation
+
+### From PyPI
+
+```bash
+pip install teddr
+```
+
+### From GitHub
 Clone the repo from [here](https://github.com/lmiconsulting/teddr) (this repo).
 
 Install requirements:
